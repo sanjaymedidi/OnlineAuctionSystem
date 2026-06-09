@@ -1,0 +1,47 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>seller login page</title>
+</head>
+<body>
+
+</body>
+</html>
+<%
+  
+//  HttpSession hs= request.getSession();
+// String otp=(String)   hs.getAttribute("GenerateOtp");
+ String otp=  request.getParameter("otp");
+    
+ try{
+	 Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+		Connection conn=	DriverManager.getConnection("jdbc:mysql://localhost:3306/auction","root","root");
+	PreparedStatement pst=	conn.prepareStatement("select * from sellers where otp='"+otp+"'");	
+		
+
+ 
+ ResultSet rs=	pst.executeQuery();
+      if(rs.next()){
+    	  out.print("seller dashboard");
+    	  response.sendRedirect("SellerDashBoard.html");
+      }else{
+    	  response.sendRedirect("SellerLogin.html");
+      }
+ 
+ 
+ }
+ catch(Exception e)
+ {
+	 e.printStackTrace();
+ }
+ 
+ 
+
+%>

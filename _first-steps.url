@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/sellerLogin.css">
+    <style type="text/css">
+    .btnn{
+    width: 50%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    }   
+    
+    </style>
+</head>
+
+<body>
+    <!-- <header>
+        <nav class="navigation">
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header> -->
+    <div class="wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+         <div class="form-box login">
+            <h2>Seller Login</h2>
+            <form action="OtpGenerate">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="call"></ion-icon></span>
+                        <input type="tel" name="mob" pattern="[0-9]{10}" maxlength="10" required>
+                        <label>Mobile Number</label>
+                </div>
+                
+                <button type="submit" class="btnn" name="otp">Generate OTP</button>
+                </form>
+                <form action=SellerLogin.jsp method="post">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input class="password" type="number" name="otp" required>
+                        <label>OTP</label>
+                </div>
+                <div class="remember-forget">
+                    <label><input type="checkbox">Remember Me</label>
+                    
+                </div>
+                <button type="submit" class="btn">Login</button>
+                </form>
+                <div class="login-register">
+                    <p>Don't have an account?<a 
+                        href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+         </div>
+         <div class="form-box Register">
+            <div class="register">
+            <h2>Seller Registration</h2>
+            <form action="sellerRegistrationController" method="post" enctype="multipart/form-data">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="text" required name="un">
+                        <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" required name="em">
+                        <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="call"></ion-icon></span>
+                        <input type="number" required name="mob">
+                        <label>Mobile</label>
+                </div>
+                <div class="remember-forget">
+                    <div class="remember-forget1">
+                    <legend>Choose your gender</legend>
+        
+        <input type="radio" name="gender" id="male" value="male" checked>
+        <label for="male">Male</label>
+        
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female">Female</label>
+        
+        <input type="radio" name="gender" id="others" value="Others">
+        <label for="other">Others</label><br><br>
+         <label for="file">Upload image</label><br>
+         <input type="file" name="img" id="file" value="file" required="required">
+        
+                    </div>
+                </div>
+                <!-- <div class="remember-forget">
+                    <label><input type="checkbox">agree to the terms & conditions</label>
+                    
+                </div> -->
+                <button type="submit" class="btn1">Register</button>
+                <div class="login-register">
+                    <p>Already have an account?<a 
+                        href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+            </div>
+         </div>
+
+
+         </div>
+    </div>
+    <script src="js/sellerLogin.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
